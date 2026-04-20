@@ -1,0 +1,204 @@
+[
+  {
+    "task_id": "task-001",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "setup",
+    "description": "Initialize Next.js project with JavaScript",
+    "steps": [
+      "Create new Next.js project at /Users/srapngai/Desktop/pokedex using npx create-next-app@latest with JavaScript (not TypeScript)",
+      "Configure next.config.js for the project",
+      "Remove default content and prepare project structure"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-002",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "setup",
+    "description": "Install testing dependencies",
+    "steps": [
+      "Install Jest and React Testing Library dependencies",
+      "Create jest.config.js in /Users/srapngai/Desktop/pokedex",
+      "Create jest.setup.js in /Users/srapngai/Desktop/pokedex",
+      "Update package.json to include test scripts"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-003",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "backend",
+    "description": "Create API route to fetch Pokemon data",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/app/api/pokemon/[id]/route.js",
+      "Implement fetch logic to get data from pokeapi.co/api/v2/pokemon/[id]",
+      "Extract and return name, type, official_artwork.front_default image, and cries.latest"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-004",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "test",
+    "description": "Test Pokemon API route",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/app/api/pokemon/[id]/route.spec.js",
+      "Write tests to verify API route returns correct Pokemon data structure",
+      "Mock pokeapi.co responses"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-005",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "UI",
+    "description": "Create main Pokedex container component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/Pokedex.js",
+      "Implement state management for current Pokemon (1-151)",
+      "Add logic to fetch Pokemon data when ID changes",
+      "Create container structure inspired by original Pokedex design"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-006",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "test",
+    "description": "Test Pokedex component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/Pokedex.spec.js",
+      "Test component rendering and state management",
+      "Test Pokemon ID changes trigger data fetch"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-007",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "UI",
+    "description": "Create Pokemon display component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/PokemonDisplay.js",
+      "Display Pokemon image (official_artwork.front_default)",
+      "Display Pokemon name, Pokedex number, and types",
+      "Handle loading and error states"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-008",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "test",
+    "description": "Test Pokemon display component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/PokemonDisplay.spec.js",
+      "Test rendering with Pokemon data",
+      "Test loading and error states"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-009",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "UI",
+    "description": "Create navigation controls component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/Navigation.js",
+      "Implement left and right arrow buttons",
+      "Add logic to navigate between Pokemon 1-151 (wrap around at boundaries)",
+      "Emit events to parent component for Pokemon ID changes"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-010",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "test",
+    "description": "Test navigation controls",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/Navigation.spec.js",
+      "Test left and right button clicks",
+      "Test boundary wrapping (1 to 151 and vice versa)"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-011",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "UI",
+    "description": "Create search input component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/SearchInput.js",
+      "Implement input field for Pokedex number (1-151)",
+      "Add validation to ensure number is within valid range",
+      "Emit search event to update current Pokemon"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-012",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "test",
+    "description": "Test search input component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/SearchInput.spec.js",
+      "Test input value changes and validation",
+      "Test search submission with valid and invalid numbers"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-013",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "UI",
+    "description": "Create audio player for Pokemon cries",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/CryPlayer.js",
+      "Implement button to play Pokemon cry audio (cries.latest)",
+      "Use HTML5 Audio API to play sound",
+      "Handle audio loading and playback errors"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-014",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "test",
+    "description": "Test audio player component",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/components/CryPlayer.spec.js",
+      "Test play button click triggers audio",
+      "Mock HTML5 Audio API",
+      "Test error handling"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-015",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "UI",
+    "description": "Create CSS styling inspired by original Pokedex",
+    "steps": [
+      "Create /Users/srapngai/Desktop/pokedex/styles/pokedex.css with Pokedex-inspired design",
+      "Style main container to look like original red Pokedex device",
+      "Add screen area styling for Pokemon display",
+      "Style buttons and controls to match retro aesthetic",
+      "Ensure responsive design"
+    ],
+    "passes": true
+  },
+  {
+    "task_id": "task-016",
+    "output_directory": "/Users/srapngai/Desktop/pokedex",
+    "category": "UI",
+    "description": "Integrate components in main page",
+    "steps": [
+      "Update /Users/srapngai/Desktop/pokedex/app/page.js to import and use Pokedex component",
+      "Import CSS styling",
+      "Set up main app layout",
+      "Ensure all components work together"
+    ],
+    "passes": true
+  }
+]

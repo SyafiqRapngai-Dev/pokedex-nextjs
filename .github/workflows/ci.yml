@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # TODO: Check out the repository code
+      # Hint: uses actions/checkout@v4
+      - name: Checks out the repo code
+        uses: actions/checkout@v4
+
+      # TODO: Set up Node.js (version 20)
+      # Hint: uses actions/setup-node@v4, needs a "with: node-version:" block
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # TODO: Install dependencies
+      # Hint: what command did your Dockerfile use to install reliably?
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+
+      # TODO: Run the tests
+      # Hint: check your package.json scripts
+      - name: run tests
+        run: npm run test
