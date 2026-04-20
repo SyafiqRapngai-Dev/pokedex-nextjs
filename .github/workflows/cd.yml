@@ -30,11 +30,12 @@ jobs:
       # Hint: use "docker build" with a -t flag
       # Tag it as: ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:latest
       - name: Build docker image
-        run: docker build \
-          --platform linux/amd64 \
-          -t ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:latest \
-          -t ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:${{ github.event.workflow_run.head_sha }} \
-          .
+        run: |
+          docker build \
+            --platform linux/amd64 \
+            -t ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:latest \
+            -t ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:${{ github.event.workflow_run.head_sha }} \
+            .
 
       # TODO: Push the image
       # Hint: use "docker push" with the full image name
@@ -53,7 +54,8 @@ jobs:
       # Hint: use "run:" with the az containerapp update command
       # Use ${{ secrets.ACR_LOGIN_SERVER }} instead of hardcoding the registry URL
       - name: Redeploy to ACR with updated image
-        run: az containerapp update \
-          --name pokedex \
-          --resource-group rg-pokedex-syafiq \
-          --image ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:${{ github.event.workflow_run.head_sha }}
+        run: |
+          az containerapp update \
+            --name pokedex \
+            --resource-group rg-pokedex-syafiq \
+            --image ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:${{ github.event.workflow_run.head_sha }}
