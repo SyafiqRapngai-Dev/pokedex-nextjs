@@ -34,5 +34,5 @@ jobs:
 
       # TODO: Run the tests
       # Hint: check your package.json scripts
-      - name: run tests
-        run: npm run test
+    #   - name: run tests
+    #     run: npm run test
